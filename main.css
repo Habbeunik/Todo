@@ -59,17 +59,13 @@ nav {
 nav a {
   color: black;
   font-weight: 500;
-  opacity: 0.6;
   text-decoration: none;
   font-size: 1.4rem;
   text-transform: capitalize;
   /* padding: 0 2rem; */
 }
 nav a:first-child {
-  color: #0759ee;
-  font-weight: 700;
   border-right: 4px solid rgba(128, 128, 128, 0.365);
-  opacity: 1;
   padding-right: 3rem;
 }
 nav a span {
@@ -78,6 +74,15 @@ nav a span {
   padding: 2px 8px;
   border-radius: 15px;
   font-size: 1.2rem;
+}
+
+nav a:active {
+  color: #0759ee;
+  font-weight: 700;
+}
+
+nav a:active span {
+  background-color: #0759ee;
 }
 /* main{
     overflow-y: scroll;
