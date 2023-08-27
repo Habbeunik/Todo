@@ -58,7 +58,7 @@ function renderTabs() {
   );
 }
 
-function getTabTodoData() {
+function getTabTodos() {
   if (activeTab === TABS.all) return todoData;
   if (activeTab === TABS.unCompleted) return getUnCompletedTodos(todoData);
 
@@ -78,7 +78,7 @@ todoForm.addEventListener("submit", (e) => {
     isCompleted: false,
     date: new Date(),
   });
-  renderUI(getTabTodoData());
+  renderUI(getTabTodos());
 
   todoInput.value = "";
 });
@@ -113,7 +113,7 @@ const addIsCompletedToggleToCard = (todoCard, index) => {
   const statusButton = todoCard.querySelector(".circle");
   statusButton.addEventListener("click", () => {
     todoData[index].isCompleted = !todoData[index].isCompleted;
-    renderUI(getTabTodoData());
+    renderUI(getTabTodos());
   });
 };
 
@@ -126,17 +126,17 @@ function renderTodos(todos) {
 
 allTodoTab.addEventListener("click", () => {
   activeTab = TABS.all;
-  renderUI(getTabTodoData(todoData));
+  renderUI(getTabTodos(todoData));
 });
 
 completedTodoTab.addEventListener("click", () => {
   activeTab = TABS.completed;
-  renderUI(getTabTodoData(todoData));
+  renderUI(getTabTodos(todoData));
 });
 
 unCompletedTodoTab.addEventListener("click", () => {
   activeTab = TABS.unCompleted;
-  renderUI(getTabTodoData(todoData));
+  renderUI(getTabTodos(todoData));
 });
 
 renderUI();
